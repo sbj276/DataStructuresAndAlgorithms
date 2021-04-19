@@ -16,6 +16,8 @@ class CatalanSeries{
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		generateCatalanSeries(n);
+		for(int i=0;i<n;i++)
+		System.out.println(generateCatalanSeriesRecursive(i));
 	}
 
 	//To generate calatan series for n numbers
@@ -31,5 +33,15 @@ class CatalanSeries{
 		}
 		System.out.println(Arrays.toString(c));
 
+	}
+
+	public static int generateCatalanSeriesRecursive(int n){
+		int res=0;
+		if(n == 1 || n ==0)
+			return 1;
+		for(int i=0;i<n;i++){
+			res += generateCatalanSeriesRecursive(i)*generateCatalanSeriesRecursive(n-i-1);
+		}
+		return res;
 	}
 }
