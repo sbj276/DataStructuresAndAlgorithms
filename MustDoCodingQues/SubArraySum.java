@@ -26,7 +26,7 @@ class SubArraySum{
 				start++;
 			}
 			if(currentSum == sum){
-				return"sum found between index "+ start +" and "+ (i-1);
+				return"sum found between index "+ start+" and "+ (i-1);
 			}
 
 			if(i<n)
